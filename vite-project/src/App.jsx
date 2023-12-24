@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
+import Albums from './Albums';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Album = ({ album }) => {
+  const { title, artist, rating, image } = album;
 
   return (
+    <div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px" }}>
+      <img src={image} alt={title} style={{ maxWidth: "100%" }} />
+      <h2 className="album-title">{title}</h2>
+      <p>Artist: {artist}</p>
+      <p>Rating: {rating}/100</p>
+    </div>
+  );
+};
+
+function App() {
+  return (
     <>
+      {/* title */}
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>My Album Reviews</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      {/* album lists */}
+      <div className="album-grid">
+        {Albums.map((album) => (
+          <Album key={album.id} album={album} />
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
