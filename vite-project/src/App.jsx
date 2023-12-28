@@ -11,10 +11,8 @@ const Album = ({ album }) => {
       <img className="album-image" src={image} alt={title}/>
       <h2 className="album-title">{title}</h2>
       <p className="album-artist">{artist}</p>
-      <p>{rating}/100</p>
-      {/* <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" style="width: 0%"></div>
-      </div> */}
+      <p className="album-rating">{rating}</p>
+      <progress value={rating} max="100"></progress>
     </div>
   );
 };
