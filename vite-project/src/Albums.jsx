@@ -1,3 +1,12 @@
+
+//this is my list of albums that I have included so far.  Hopefully, this can become a database.
+
+//each album has:
+//1. unique id
+//2. album title
+//3. artist name
+//4. album rating
+//5. album cover image link
 const Albums = [
     {
       id: 1,

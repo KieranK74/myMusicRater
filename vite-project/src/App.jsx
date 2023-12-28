@@ -1,16 +1,20 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Albums from './Albums';
+import Review from './Review';
 
 const Album = ({ album }) => {
   const { title, artist, rating, image } = album;
 
   return (
-    <div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px" }}>
-      <img className="album-image" src={image} alt={title} style={{ maxWidth: "100%" }} />
+    <div style={{padding: "10px", margin: "10px" }}>
+      <img className="album-image" src={image} alt={title}/>
       <h2 className="album-title">{title}</h2>
-      <p>Artist: {artist}</p>
-      <p>Rating: {rating}/100</p>
+      <p className="album-artist">{artist}</p>
+      <p>{rating}/100</p>
+      {/* <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: 0%"></div>
+      </div> */}
     </div>
   );
 };
