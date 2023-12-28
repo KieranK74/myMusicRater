@@ -1,18 +1,18 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #202225;
+  color: #DCDDDE;
 }
 
 h1 {
   text-align: center;
+  font-size: 72px;
 }
 
 .album-grid {
   display: flex;
-
   flex-flow: row wrap;
-
   justify-content: space-around;
-
   padding: 0;
   margin: 0;
   list-style: none;
@@ -28,6 +28,18 @@ h1 {
   font-size: 3em;
   text-align: center;
 }
+
+.album-image {
+  transform: scale(1);
+  transition-duration: 0.5s;
+}
+
+.album-image:hover {
+  transform: scale(0.95);
+  transition-duration: 0.5s;
+}
+
+
 
 .album-title {
   font-size: 16px;
