@@ -7,20 +7,30 @@ body {
   margin:40px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 72px;
+.link{
+    color: #DCDDDE;
+    font-size: large;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.link:hover{
+    text-decoration: underline;
 }
 
 .header{
     display:flex;
     justify-content: center;
     margin:100px;
+    margin-top: 50px;
+    
 
 }
 
 .review-image img {
     max-width: 100%;
+    height: 400px;
     margin-right: 50px;
     margin-left: -50px;
 }
@@ -33,8 +43,8 @@ h1 {
 .title{
     padding-bottom: 5px;
     font-weight: bolder;
-    font-size: 42px;
-    max-width: 400px; 
+    font-size: 50px;
+    max-width: 450px; 
     word-wrap: break-word;
     text-align: left;
 }
@@ -52,11 +62,17 @@ h1 {
     font-weight: bold;
 }
 
-progress{
-    width: 100px;
-    height: 30px;
+.review-progress{
+    width: 125px;
+    height: 40px;
 }
   
 .review-section {
     margin-top: 20px;
+    margin: 60px;
+}
+
+.review-section br{
+    margin-top: 20px;
+   
 }

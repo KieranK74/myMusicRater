@@ -4,10 +4,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #202225;
   color: #DCDDDE;
-  margin:20px;
+  margin:40px;
 }
 
-h1 {
+.website-title {
   text-align: center;
   font-size: 72px;
 }
@@ -74,6 +74,6 @@ h1 {
   font-weight: bold;
 }
 
-progress{
+.app-progress{
   width: 100px;
 }

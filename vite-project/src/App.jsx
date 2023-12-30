@@ -16,7 +16,7 @@ const App = () => {
         </Link>
         <p className="album-artist">{artist}</p>
         <p className="album-rating">{rating}</p>
-        <progress value={rating} max="100"></progress>
+        <progress className='app-progress' value={rating} max="100"></progress>
       </div>
     );
   };
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <>
       <div>
-        <h1>My Album Reviews</h1>
+        <h1 className= 'website-title'>My Album Reviews</h1>
       </div>
       <div className="album-grid">
         {Albums.map((album) => (
