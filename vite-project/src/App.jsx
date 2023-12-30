@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import Albums from './Albums.jsx';
-import Review from './Review';
 import { Link } from 'react-router-dom';
 
 const App = () => {
-  const [selectedAlbum, setSelectedAlbum] = useState(null);
-
-  const onSelectAlbum = (album) => {
-    setSelectedAlbum(album);
-    console.log(album.title);
-  };
-
+  
   const Album = ({ album }) => {
     const { id, title, artist, rating, image } = album;
 
@@ -38,7 +31,6 @@ const App = () => {
           <Album key={album.id} album={album} />
         ))}
       </div>
-      {/* {selectedAlbum && <Review album={selectedAlbum} />} */}
     </>
   );
 };

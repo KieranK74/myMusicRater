@@ -48,6 +48,7 @@ h1 {
 }
 
 .album-title {
+  color: #DCDDDE;
   font-size: 24px;
   font-weight: bold;
   white-space: nowrap;
@@ -55,6 +56,11 @@ h1 {
   text-overflow: ellipsis;
   max-width: calc(240px);
   height: 25px;
+  text-decoration: none;
+}
+
+.album-title:hover {
+  text-decoration: underline;
 }
 
 .album-artist {
