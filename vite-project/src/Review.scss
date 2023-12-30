@@ -38,6 +38,7 @@ body {
 .review-details {
     margin-left: 20px;
     text-align: center;
+    align-content: center;
 }
 
 .title{
@@ -62,17 +63,24 @@ body {
     font-weight: bold;
 }
 
-.review-progress{
-    width: 125px;
+.progress-container{
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.progress {
+    width: 200px;
+}
+
+.progress-bar{
     height: 40px;
 }
   
 .review-section {
     margin-top: 20px;
     margin: 60px;
-}
-
-.review-section br{
-    margin-top: 20px;
-   
+    font-size: 28px;
+    text-align: center;
 }
