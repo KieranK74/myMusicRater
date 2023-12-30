@@ -1,38 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
-import Albums from './Albums';
-import Review from './Review';
+import Albums from './Albums.jsx';
 
-const Album = ({ album }) => {
-  const { title, artist, rating, image } = album;
+const App = () => {
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
 
-  return (
-    <div style={{padding: "10px", margin: "10px" }}>
-      <img className="album-image" src={image} alt={title}/>
-      <h2 className="album-title">{title}</h2>
-      <p className="album-artist">{artist}</p>
-      <p className="album-rating">{rating}</p>
-      <progress value={rating} max="100"></progress>
-    </div>
-  );
-};
+  const onSelectAlbum = (album) => {
+    setSelectedAlbum(album);
+    console.log(album.title);
+  };
 
-function App() {
+  const Album = ({ album }) => {
+    const { title, artist, rating, image } = album;
+
+    return (
+      <div style={{ padding: "10px", margin: "10px" }}>
+        <div onClick={() => onSelectAlbum(album)}>
+          <img className="album-image" src={image} alt={title} />
+          <h2 className="album-title">{title}</h2>
+        </div>
+        <p className="album-artist">{artist}</p>
+        <p className="album-rating">{rating}</p>
+        <progress value={rating} max="100"></progress>
+      </div>
+    );
+  };
+
   return (
     <>
-      {/* title */}
       <div>
         <h1>My Album Reviews</h1>
       </div>
-      {/* album lists */}
       <div className="album-grid">
         {Albums.map((album) => (
           <Album key={album.id} album={album} />
         ))}
       </div>
+      {/* {selectedAlbum && <Review album={selectedAlbum} />} */}
     </>
   );
-}
+};
 
 export default App;
 
