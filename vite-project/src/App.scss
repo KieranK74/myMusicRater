@@ -74,6 +74,16 @@ body {
   font-weight: bold;
 }
 
-.app-progress{
-  width: 100px;
+.progress-container-app{
+  display: flex;
+  justify-content: left;
+
+}
+
+.progress-app {
+   width: 100px;
+}
+
+.progress-bar-app{
+   height: 15px;
 }

@@ -27,6 +27,19 @@ const Review = () => {
     };
   }, [progress, album.rating]);
 
+  // red: 0-40
+  // yellow: 41-69
+  // green: 70-100
+  const getProgressBarColor = () => {
+    if (album.rating < 40) {
+      return '#E64747';
+    } else if (album.rating >= 40 && album.rating <= 69) {
+      return '#E6E22D';
+    } else {
+      return '#8fb935';
+    }
+  };
+
 
   if (!album) {
     return (
@@ -61,8 +74,15 @@ const Review = () => {
           <p className='rating'>{album.rating}</p>
           <div className='progress-container' >
             <div className='progress'>
-              <div className='progress-bar' role='progressbar' style={{ width: `${progress}%` }} aria-valuenow={album.rating} aria-valuemin='0' aria-valuemax='100'></div>
-            </div>
+            <div
+              className='progress-bar'
+              role='progressbar'
+              style={{ width: `${progress}%`, backgroundColor: getProgressBarColor(),}}
+              aria-valuenow={progress}
+              aria-valuemin='0'
+              aria-valuemax={album.rating}>
+              </div>            
+              </div>
           </div>
         </div>
       </div>

@@ -49,6 +49,15 @@ const Albums = [
         image: "https://upload.wikimedia.org/wikipedia/en/7/76/Disclosure_-_Settle.png", 
         review: "Groundbreaking, amazing, the best UK Garage of the 2010s.  Love these brothers <3"
     },
+
+    {
+      id: 6,
+      title: "The Click",
+      artist: "AJR",
+      rating: 39,
+      image: "https://upload.wikimedia.org/wikipedia/en/7/76/Disclosure_-_Settle.png", 
+      review: "Disney Adults make beep boop music"
+  },
     
   ];
 
