@@ -71,7 +71,9 @@ const Review = () => {
         <div className='review-details'>
           <h2 className='title'>{album.title}</h2>
           <h4 className='artist'>{album.artist}</h4>
+          <h6 className='year'>{album.year}</h6>
           <p className='rating'>{album.rating}</p>
+          
           <div className='progress-container' >
             <div className='progress'>
             <div

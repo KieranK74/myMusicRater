@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Albums from './Albums.jsx';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const App = () => {
   
   const Album = ({ album }) => {
-    const { id, title, artist, rating, image } = album;
+    const { id, title, artist, rating, image, year } = album;
 
     const getProgressBarColor = () => {
       if (rating < 40) {
@@ -26,18 +26,16 @@ const App = () => {
         </Link>
         <p className="album-artist">{artist}</p>
         <p className="album-rating">{rating}</p>
-        <div className='progress-container-app' >
-            <div className='progress-app'>
-              <div
-                className='progress-bar-app'
-                role='progressbar'
-                style={{ width: `${rating}%`, backgroundColor: getProgressBarColor(),}}
-                aria-valuenow={rating}
-                aria-valuemin='0'
-                aria-valuemax='100'>
-              </div>            
-            </div>
-          </div>
+        <div className='progress-container-app'>
+        <div
+          className='progress-bar-app'
+          style={{
+            width: `${rating}%`,
+            height: '20px',
+            backgroundColor: rating < 40 ? '#E64747' : rating <= 69 ? '#E6E22D' : '#8fb935',
+          }}
+        ></div>
+      </div>
       </div>
     );
   };
