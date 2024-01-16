@@ -10,6 +10,7 @@ body {
 .website-title {
   text-align: center;
   font-size: 72px;
+  transition: opacity 1s ease-in-out;
 }
 
 .album-grid {
@@ -83,4 +84,11 @@ body {
 
 .progress-bar-app{
    height: 15px;
+}
+
+#button-row{
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 30px;
+  width: 50%;
 }
