@@ -37,15 +37,10 @@ body {
 .album-image {
   width: 100%;
   height: 300px;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
   transform: scale(1);
   transition-duration: 0.5s;
-}
-
-.album-image:hover {
-  transform: scale(0.95);
-  transition-duration: 0.5s;
-
+  box-shadow: 0 3em 4em rgba(0,0,0,.15);
 }
 
 .album-title {
@@ -91,4 +86,56 @@ body {
   align-items: center;
   justify-content: center !important;
   margin-bottom: 30px;
+}
+
+.ribbon{
+  width: 8em;
+  height: 8em;
+  position: absolute;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ribbon:after{
+  z-index: 2;
+  content: attr(data-rating);
+  background-color: #E64747;
+  position: absolute;
+  width: 150%;
+  height: 2.5em;
+  transform: rotate(-45deg) translateY(-1.9em);
+  border-radius: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:#202225;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  box-shadow: 0 .3em 1em rgba(0,0,0,.5);
+}
+
+.ribbon[data-rating^="4"]::after,
+.ribbon[data-rating^="5"]::after,
+.ribbon[data-rating^="6"]::after {
+  background-color: #E6E22D;
+}
+
+.ribbon[data-rating^="7"]::after,
+.ribbon[data-rating^="8"]::after,
+.ribbon[data-rating^="9"]::after,
+.ribbon[data-rating^="10"]::after {
+  background-color: #8fb935;
+}
+
+.album-and-ribbon:hover{
+  transform: scale(0.95);
+  transition-duration: 0.5s;
 }

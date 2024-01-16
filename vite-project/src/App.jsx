@@ -20,7 +20,7 @@ const App = () => {
   const Album = ({ album }) => {
     const { id, title, artist, rating, image, year } = album;
 
-    const getProgressBarColor = () => {
+    const getRatingColor = () => {
       if (rating < 40) {
         return '#E64747';
       } else if (rating >= 40 && rating <= 69) {
@@ -33,21 +33,13 @@ const App = () => {
     return (
       <div style={{ padding: "10px", margin: "10px",  opacity: fade ? 1 : 0, transition: "opacity 1s ease-in-out"}}>
         <Link to={`/review/${id}`}>
-          <img className="album-image" src={image} alt={title} />
+          <div className='album-and-ribbon'> 
+            <span className = "ribbon" data-rating={rating}></span>
+            <img className="album-image" src={image} alt={title} />
+          </div>
           <h2 className="album-title">{title}</h2>
         </Link>
         <p className="album-artist">{artist}</p>
-        <p className="album-rating">{rating}</p>
-        <div className='progress-container-app'>
-        {/* <div
-          className='progress-bar-app'
-          style={{
-            width: `${rating}%`,
-            height: '20px',
-            backgroundColor: rating < 40 ? '#E64747' : rating <= 69 ? '#E6E22D' : '#8fb935',
-          }}
-        ></div> */}
-      </div>
       </div>
     );
   };
