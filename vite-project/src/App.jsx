@@ -39,14 +39,14 @@ const App = () => {
         <p className="album-artist">{artist}</p>
         <p className="album-rating">{rating}</p>
         <div className='progress-container-app'>
-        <div
+        {/* <div
           className='progress-bar-app'
           style={{
             width: `${rating}%`,
             height: '20px',
             backgroundColor: rating < 40 ? '#E64747' : rating <= 69 ? '#E6E22D' : '#8fb935',
           }}
-        ></div>
+        ></div> */}
       </div>
       </div>
     );
@@ -67,17 +67,19 @@ const App = () => {
       <div>
         <h1 className= 'website-title'>My Album Reviews</h1>
       </div>
-      <div className="btn-group btn-group-toggle"  data-toggle="buttons" id ="button-row">
-        {uniqueYears.map((year) => (
-          <label class="btn btn-secondary">
-            <input key={year}  type="radio" name="options" id={year}  autocomplete="off" className={`btn btn-outline-secondary year-button ${year === selectedYear ? 'selected' : ''}`} onClick={() => handleYearButtonClick(year)}/>
-            {year}
-          </label>
-        ))}
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="none"  autocomplete="off" className={`btn btn-outline-secondary year-button ${selectedYear === "none" ? 'selected' : ''}`} onClick={() => handleYearButtonClick("none")}/>
-              See All
-          </label>
+      <div className="button-row">
+        <div className="btn-group btn-group-toggle"  data-toggle="buttons">
+          {uniqueYears.map((year) => (
+            <label class="btn btn-secondary">
+              <input key={year}  type="radio" name="options" id={year}  autocomplete="off" className={`btn btn-outline-secondary year-button ${year === selectedYear ? 'selected' : ''}`} onClick={() => handleYearButtonClick(year)}/>
+              {year}
+            </label>
+          ))}
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="none"  autocomplete="off" className={`btn btn-outline-secondary year-button ${selectedYear === "none" ? 'selected' : ''}`} onClick={() => handleYearButtonClick("none")}/>
+                See All
+            </label>
+        </div>
       </div>
       <div className="album-grid">
         {Albums.filter(filterAlbumsByYear).map((album) => (

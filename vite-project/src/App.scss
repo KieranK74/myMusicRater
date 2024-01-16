@@ -86,9 +86,9 @@ body {
    height: 15px;
 }
 
-#button-row{
+.button-row{
   display: flex !important;
+  align-items: center;
   justify-content: center !important;
   margin-bottom: 30px;
-  width: 50%;
 }
