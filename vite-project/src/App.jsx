@@ -18,7 +18,7 @@ const App = () => {
   }, []);
   
   const Album = ({ album }) => {
-    const { id, title, artist, rating, image, year } = album;
+    const { id, title, artist, rating, image} = album;
 
     const getRatingColor = () => {
       if (rating < 40) {
@@ -32,12 +32,14 @@ const App = () => {
 
     return (
       <div style={{ padding: "10px", margin: "10px",  opacity: fade ? 1 : 0, transition: "opacity 1s ease-in-out"}}>
+        
         <Link to={`/review/${id}`}>
-          <div className='album-and-ribbon' album-info={`${title}\n${artist}`}> 
+          <div className='album-and-ribbon' album-title={title} album-artist={artist}> 
             <span className = "ribbon" data-rating={rating}></span>
             <img className="album-image" src={image} alt={title} />
           </div>
         </Link>
+        
       </div>
     );
   };

@@ -141,7 +141,7 @@ body {
 }
 
 .album-and-ribbon:hover::before {
-  content: attr(album-info);
+  content: attr(album-title) '\A' attr(album-artist);
   position: absolute; 
   top: 0;
   left: 0;
@@ -158,20 +158,18 @@ body {
   color: white; 
   text-align: center;
   white-space: pre-line;
+  font-size: 24px;
 }
+
 
 .album-and-ribbon:hover {
   transform: scale(0.95);
   transition-duration: 0.5s; 
 }
 
-.album-and-ribbon:hover::before {
-  opacity: 1;
-  font-size: 24px; /* Adjust the font size of the title on hover */
+.album-and-ribbon:hover:before .album-artist {
+  font-size: 16px;
+  margin-top: 15px; /* Adjust the margin for spacing between title and artist */
 }
 
-.album-and-ribbon:hover::before p {
-  /* Customize styles for the artist text on hover */
-  font-size: 16px;
-  margin: 0;
-}
+
