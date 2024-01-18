@@ -33,13 +33,11 @@ const App = () => {
     return (
       <div style={{ padding: "10px", margin: "10px",  opacity: fade ? 1 : 0, transition: "opacity 1s ease-in-out"}}>
         <Link to={`/review/${id}`}>
-          <div className='album-and-ribbon'> 
+          <div className='album-and-ribbon' album-info={`${title}\n${artist}`}> 
             <span className = "ribbon" data-rating={rating}></span>
             <img className="album-image" src={image} alt={title} />
           </div>
-          <h2 className="album-title">{title}</h2>
         </Link>
-        <p className="album-artist">{artist}</p>
       </div>
     );
   };
